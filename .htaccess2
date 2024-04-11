@@ -1,0 +1,41 @@
+RewriteEngine on
+
+# Products
+RewriteRule ^products$  products.php [NC,L]
+RewriteRule ^products/([0-9]+)$  products/read_by_id.php?id=$1 [NC,L]
+RewriteRule ^products/category/([0-9]+)$  products/read_by_category.php?category_id=$1 [NC,L]
+RewriteRule ^products/insert$  products/insert.php [NC,L]
+RewriteRule ^products/edit/([0-9]+)$  products/edit.php?id=$1 [NC,L]
+RewriteRule ^products/delete/([0-9]+)$  products/delete.php?id=$1 [NC,L]
+
+# Categories
+RewriteRule ^categories/insert$  categories/insert.php [NC,L]
+RewriteRule ^categories/delete/([0-9]+)$  categories/delete.php?id=$1 [NC,L]
+RewriteRule ^categories/update/([0-9]+)$  categories/update.php?id=$1 [NC,L]
+
+# Orders
+RewriteRule ^orders/insert$  orders/insert.php [NC,L]
+RewriteRule ^orders/details/([0-9]+)$  orders/details.php?id=$1 [NC,L]
+RewriteRule ^orders/update/([0-9]+)$  orders/update.php?id=$1 [NC,L]
+RewriteRule ^orders/delete/([0-9]+)$  orders/delete.php?id=$1 [NC,L]
+RewriteRule ^orders$  orders/read_all.php [NC,L]
+RewriteRule ^orders/details$  orders/read_with_details.php [NC,L]
+RewriteRule ^orders/status/([0-9]+)$  orders/read_by_status.php?status_id=$1 [NC,L]
+
+# Users
+RewriteRule ^users/insert$  users/insert.php [NC,L]
+RewriteRule ^users$  users/read_all.php [NC,L]
+RewriteRule ^users/([0-9]+)$  users/read_by_id.php?id=$1 [NC,L]
+RewriteRule ^users/update/([0-9]+)$  users/update.php?id=$1 [NC,L]
+RewriteRule ^users/delete/([0-9]+)$  users/delete.php?id=$1 [NC,L]
+
+
+
+
+
+# insert product with image
+RewriteRule ^images/(.*)/(.*) images/$1/$2 [L]
+
+
+
+ErrorDocument 404   "<h1 style='width:100%;text-align:center;margin-top:300px;'>404 page not found!</h1><a href='./' style='text-decoration:none'><h3 style='width:100%;text-align:center;margin-top:80px;color:#ff0759'>Mahaxay shop</h3></a>"

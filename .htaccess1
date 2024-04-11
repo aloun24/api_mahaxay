@@ -1,0 +1,42 @@
+RewriteEngine on
+
+
+#page
+RewriteRule ^page/([0-9a-zA-Z]+) index.php?page=$1 [NC,L]
+
+RewriteRule ^products$  products.php [NC,L]
+RewriteRule ^users/([0-9a-zA-Z]+) users.php?id_user=$1 [NC,L]
+RewriteRule ^products/([0-9a-zA-Z]+) products.php?id_product=$1 [NC,L]
+RewriteRule ^product_by_cate/([0-9a-zA-Z]+) products.php?id_category_products=$1 [NC,L]
+RewriteRule ^edit/product/([0-9a-zA-Z]+) products.php?edit_product=$1 [NC,L]
+RewriteRule ^delete/product/([0-9a-zA-Z]+) products.php?delete_product=$1 [NC,L]
+
+
+RewriteRule ^orders$  orders.php [NC,L]
+RewriteRule ^orders/([0-9a-zA-Z]+) orders.php?id_order=$1 [NC,L]
+RewriteRule ^order_details/([0-9a-zA-Z]+) orders.php?order_details=$1 [NC,L]
+RewriteRule ^order_status/([0-9a-zA-Z]+) orders.php?status_id=$1 [NC,L]
+
+RewriteRule ^categories$  categories.php [NC,L]
+RewriteRule ^categories/([0-9a-zA-Z]+) categories.php?id_category=$1 [NC,L]
+RewriteRule ^product_update/([0-9a-zA-Z]+) products.php?user_id=$1 [NC,L]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RewriteRule ^images/(.*)/(.*) images/$1/$2 [L]
+
+
+
+ErrorDocument 404   "<h1 style='width:100%;text-align:center;margin-top:300px;'>404 page not found!</h1><a href='./' style='text-decoration:none'><h3 style='width:100%;text-align:center;margin-top:80px;color:#ff0759'>Mahaxay shop</h3></a>"

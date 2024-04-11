@@ -1,0 +1,74 @@
+RewriteEngine on
+
+# Page
+RewriteRule ^page/([0-9a-zA-Z]+) index.php?page=$1 [NC,L]
+
+# Products
+RewriteRule ^products$  products.php [NC,L]
+RewriteRule ^products/([0-9a-zA-Z]+)$ products.php?idProduct=$1 [NC,L]
+#read product by category
+RewriteRule ^products/category/([0-9a-zA-Z]+) products.php?idCategoryProducts=$1 [NC,L]
+RewriteRule ^products/update/([0-9a-zA-Z]+) products.php?editProduct=$1 [NC,L]
+RewriteRule ^products/delete/([0-9a-zA-Z]+)  products.php?deleteProduct=$1 [NC,L]
+
+# Categories
+RewriteRule ^categories$  categories.php [NC,L]
+RewriteRule ^categories/([0-9a-zA-Z]+)$ categories.php?idCategory=$1 [NC,L]
+RewriteRule ^categories/update/([0-9a-zA-Z]+) categories.php?idCategory=$1 [NC,L]
+
+# Orders
+RewriteRule ^orders$  orders.php [NC,L]
+RewriteRule ^orders/([0-9a-zA-Z]+)$ orders.php?idOrder=$1 [NC,L]
+RewriteRule ^orders/update/([0-9a-zA-Z]+) orders.php?idUpdate=$1 [NC,L]
+RewriteRule ^orders/delete/([0-9a-zA-Z]+)  orders.php?deleteOrder=$1 [NC,L]
+RewriteRule ^orders/status/([0-9a-zA-Z]+)  orders.php?statusID=$1 [NC,L]
+
+# Orders detail
+RewriteRule ^order_details/([0-9a-zA-Z]+)$ orders.php?orderDetails=$1 [NC,L]
+RewriteRule ^order_details/update/([0-9a-zA-Z]+) orders.php?orderDetails=$1 [NC,L]
+RewriteRule ^order_details/delete/([0-9a-zA-Z]+) orders.php?deleteOrderItem=$1 [NC,L]
+
+# Users
+RewriteRule ^users$ users.php [NC,L]
+RewriteRule ^users/([0-9]+)$  users.php?idUser=$1 [NC,L]
+RewriteRule ^users/update/([0-9]+)$  users.php?idUpdate=$1 [NC,L]
+RewriteRule ^users/delete/([0-9]+)$  users.php?idDelete=$1 [NC,L]
+
+
+
+# Users
+RewriteRule ^orderfromflutter$ orderfromflutter.php [NC,L]
+RewriteRule ^orderfromflutter/([0-9]+)$  orderfromflutter.php?orderfromflutter=$1 [NC,L]
+RewriteRule ^orderfromflutter/update/([0-9]+)$  orderfromflutter.php?idUpdate=$1 [NC,L]
+RewriteRule ^orderfromflutter/delete/([0-9]+)$  orderfromflutter.php?idDelete=$1 [NC,L]
+
+
+# Users
+RewriteRule ^orderflutter$ orderflutter.php [NC,L]
+RewriteRule ^orderflutter/([0-9]+)$  orderflutter.php?orderflutter=$1 [NC,L]
+RewriteRule ^orderflutter/update/([0-9]+)$  orderflutter.php?idUpdate=$1 [NC,L]
+RewriteRule ^orderflutter/delete/([0-9]+)$  orderflutter.php?idDelete=$1 [NC,L]
+
+
+
+# ordertoarray
+RewriteRule ^ordertoarray$ ordertoarray.php [NC,L]
+RewriteRule ^ordertoarray/([0-9]+)$  ordertoarray.php?idordertoarray=$1 [NC,L]
+
+
+# Auth
+RewriteRule ^middleware$ auth.php [NC,L]
+
+
+
+
+# Login
+RewriteRule ^login$ login.php [NC,L]
+
+
+# insert product with image
+RewriteRule ^images/(.*)/(.*) images/$1/$2 [L]
+
+
+
+ErrorDocument 404   "<h1 style='width:100%;text-align:center;margin-top:300px;'>404 page not found!</h1><a href='./' style='text-decoration:none'><h3 style='width:100%;text-align:center;margin-top:80px;color:#ff0759'>Mahaxay shop</h3></a>"
